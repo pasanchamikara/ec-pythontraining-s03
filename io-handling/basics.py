@@ -1,9 +1,14 @@
 import csv
+import os
+
+# fn = pathlib.Path(__file__).parent / 'feed/asia-cup-winners.csv'
+fn = os.path.join(os.path.dirname(__file__), '..', 'feed', 'asia-cup-winners.csv') 
+op = os.path.join(os.path.dirname(__file__), '..', 'feed', 'asia-cup-refined-winners.csv') 
 
 try:
-    with open('asia-cup-refined-winners.csv', mode='w', newline='') as writefile:
+    with open(op, mode='w', newline='') as writefile:
         writer = csv.writer(writefile)
-        with open('asia-cup-winners.csv', mode='r') as file:
+        with open(fn, mode='r') as file:
             reader = csv.reader(file)
             for row in reader:
                 writer.writerow([row[0], row[4], row[2]])
