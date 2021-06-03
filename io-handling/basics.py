@@ -1,7 +1,6 @@
 import csv
 import os
 
-# fn = pathlib.Path(__file__).parent / 'feed/asia-cup-winners.csv'
 fn = os.path.join(os.path.dirname(__file__), '..', 'feed', 'asia-cup-winners.csv') 
 op = os.path.join(os.path.dirname(__file__), '..', 'feed', 'asia-cup-refined-winners.csv') 
 
